@@ -19,7 +19,7 @@ use App\Http\Controllers\MenuController;
 // });
 
 
-Route::get('/beranda', [MenuController::class, 'home']);
+Route::get('/', [MenuController::class, 'home']);
 Route::get('/info-kegiatan', [MenuController::class, 'info_kegiatan']);
 Route::get('data-siswa', [MenuController::class, 'data_siswa']);
 

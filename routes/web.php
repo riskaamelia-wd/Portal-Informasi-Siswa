@@ -19,9 +19,12 @@ use App\Http\Controllers\MenuController;
 // });
 
 
-Route::get('/', [MenuController::class, 'home']);
+Route::get('/beranda', [MenuController::class, 'home']);
 Route::get('/info-kegiatan', [MenuController::class, 'info_kegiatan']);
 Route::get('data-siswa', [MenuController::class, 'data_siswa']);
 
 
 // Route::get('/beranda', 'MenuController@home');
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

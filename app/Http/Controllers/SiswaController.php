@@ -24,7 +24,7 @@ class SiswaController extends Controller
      */
     public function create()
     {
-        //
+        return view('form_tambah');
     }
 
     /**
@@ -35,7 +35,12 @@ class SiswaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        User::create([
+            'name' => $request->inputName,
+            'nis' => $request->inputNis,
+            'email' => $request->inputEmail,
+        ]);
+        return redirect()->route('siswa.index');
     }
 
     /**

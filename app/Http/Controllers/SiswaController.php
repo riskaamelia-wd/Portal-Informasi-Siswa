@@ -63,7 +63,8 @@ class SiswaController extends Controller
      */
     public function edit($id)
     {
-        //
+        $datasiswa = User::where('id', $id)->first();
+        return view('form_ubah', compact('datasiswa'));
     }
 
     /**
@@ -75,7 +76,13 @@ class SiswaController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $siswa = User::find($id);
+        $siswa->name = $request->inputName;
+        $siswa->nis = $request->inputNis;
+        $siswa->email = $request->inputEmail;
+        $siswa->save();
+
+        return redirect()->route('siswa.index');
     }
 
     /**

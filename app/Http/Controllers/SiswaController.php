@@ -46,7 +46,8 @@ class SiswaController extends Controller
      */
     public function show($id)
     {
-        //
+        $datasiswa = User::where('id', $id)->first();
+        return view('profil_siswa', compact('datasiswa'));
     }
 
     /**
